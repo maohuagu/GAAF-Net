@@ -22,10 +22,8 @@
 ---
 
 ## 摘要 / Abstract
-**中文**
 地氟病骨骼X光影像存在病灶与背景对比度低、边界模糊、病灶尺度差异大等问题，现有分割方法在多尺度融合中缺乏动态特征选择能力，且无法弥合跳跃连接中编码器与解码器特征的语义鸿沟，难以实现精准病灶分割。针对以上难点，本文提出一种新型分割网络GAAF-Net，用于地氟病X光影像病灶自动分割。该网络在瓶颈层设计**门控注意力空洞空间金字塔池化模块（GA-ASPP）**，为每个空洞卷积分支生成独立注意力权重，实现多尺度特征动态筛选；同时在跳跃连接中嵌入**自适应融合卷积模块（AFC）**，通过可学习多尺度卷积核对齐编解码特征分布，有效弥合语义差异。基于316张地氟病X光影像的五折交叉验证实验表明，GAAF-Net的Dice系数达72.42%，95%分位数豪斯多夫距离低至9.79像素，性能优于七种主流先进分割算法，可精准完成低对比度、尺度多变的氟中毒病灶分割任务，适用于大规模临床筛查。
 
-**English**
 Automatic segmentation of skeletal fluorosis lesions in X-ray images remains challenging due to low lesion-to-background contrast, indistinct boundaries, and large-scale variations. Existing methods often lack dynamic feature selection during multi-scale fusion and fail to bridge the semantic gap between encoder and decoder features in skip connections. To address these issues, we propose a novel segmentation network named **GAAF-Net** for automatic lesion segmentation of skeletal fluorosis X-ray images. Specifically, a **Gated Attention Atrous Spatial Pyramid Pooling (GA-ASPP)** module is introduced at the bottleneck to dynamically select informative multi-scale features by generating independent attention weights for each atrous convolution branch. Furthermore, an **Adaptive Fusion Convolution (AFC)** module is designed within skip connections, where learnable multi-scale kernels are used to align feature distributions between encoder and decoder. Extensive five-fold cross-validation on 316 skeletal fluorosis X-ray images demonstrates that GAAF-Net achieves a Dice coefficient of **72.42%** and a 95th percentile Hausdorff Distance of **9.79 pixels**, outperforming seven state-of-the-art methods. The proposed method can accurately segment fluorosis lesions with low contrast and variable scales, showing great application potential for large-scale clinical screening.
 
 <p align="center">
@@ -49,12 +47,10 @@ Automatic segmentation of skeletal fluorosis lesions in X-ray images remains cha
 ---
 
 ## 方法概述 / Method Overview
-**中文**
 GAAF-Net 基于 U-Net 编解码框架构建，采用深度可分离卷积优化特征提取效率，针对地氟病X光影像分割难点，创新性设计双核心模块，实现多尺度特征自适应提取与跨层特征精准融合：
 1. **门控注意力空洞空间金字塔池化（GA-ASPP）**：构建包含1×1卷积、多膨胀率空洞卷积与全局平均池化的六分支并行结构，通过残差注意力门为各分支分配动态权重，自适应强化有效病灶特征、抑制背景冗余信息，解决病灶尺度差异大的分割难题。
 2. **自适应融合卷积（AFC）**：在跳跃连接中嵌入3×3、5×5、7×7多尺度卷积分支与轻量化通道注意力机制，动态融合不同尺度编解码特征，校准特征分布、消除语义冲突，有效抑制骨骼纹理干扰，精准保留病灶边界细节。
 
-**English**
 Built on the classic U-Net encoder-decoder framework, GAAF-Net adopts depthwise separable convolutions to optimize feature extraction efficiency. To tackle the inherent difficulties of skeletal fluorosis X-ray segmentation, we design two core modules to realize adaptive multi-scale feature extraction and accurate cross-layer feature fusion:
 1. **Gated Attention Atrous Spatial Pyramid Pooling (GA-ASPP)**: A six-branch parallel structure consisting of 1×1 convolution, atrous convolutions with multiple dilation rates, and global average pooling. It dynamically assigns adaptive weights to each branch via residual attention gates, enhancing valid lesion features and suppressing background redundancy to handle variable-scale lesions.
 2. **Adaptive Fusion Convolution (AFC)**: Embedded in skip connections with 3×3, 5×5, 7×7 multi-scale convolution branches and lightweight channel attention. It dynamically fuses cross-layer encoder-decoder features, calibrates feature distributions, eliminates semantic conflicts, suppresses interference from complex bone textures, and preserves fine lesion boundary details.
@@ -97,7 +93,6 @@ Built on the classic U-Net encoder-decoder framework, GAAF-Net adopts depthwise 
 ---
 
 ## 数据集 / Dataset
-**中文**
 本研究构建了专属地氟病骨骼X光分割数据集，包含316张有效X光样本，覆盖胫腓骨、桡尺骨、骨盆三大解剖区域。所有影像均由资深放射科医师手动精细标注，疑难样本由高年资医师终审确认，标注精准可靠。
 **部分脱敏数据集下载**：https://pan.baidu.com/s/12nDec4sANK55GI1OYsozqw?pwd=sdqb
 
@@ -128,10 +123,9 @@ Maohua Gu, Yun Wu*, Chengdong Ye, Zhihao Li, Minhan Li
 ---
 
 ## 致谢 / Acknowledgements
-**中文**
+
 本工作得到国家自然科学基金（62666019）资助。
 
-**English**
 This work has been supported by the National Natural Science Foundation of China (62666019).
 
 ---

@@ -93,7 +93,7 @@ Built on the classic U-Net encoder-decoder framework, GAAF-Net adopts depthwise 
 ---
 
 ## 数据集 / Dataset
-本研究构建了专属地氟病骨骼X光分割数据集，包含316张有效X光样本，覆盖胫腓骨、桡尺骨、骨盆三大解剖区域。所有影像均由资深放射科医师手动精细标注，疑难样本由高年资医师终审确认，标注精准可靠。
+本研究构建了专属地氟病骨骼X光分割数据集，包含316张有效X光样本，覆盖胫腓骨、桡尺骨、骨盆三大解剖区域。所有影像均由资深放射科医师手动精细标注，疑难样本由资深医师终审确认，标注精准可靠。
 **部分脱敏数据集下载**：https://pan.baidu.com/s/12nDec4sANK55GI1OYsozqw?pwd=sdqb
 
 ### 数据说明与伦理声明 / Dataset Notes & Ethics
